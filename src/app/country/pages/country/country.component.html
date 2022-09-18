@@ -1,0 +1,25 @@
+<h2>Country</h2>
+<hr>
+
+<div class="row">
+    <div class="col">
+        <!-- referencia un evento con un metodo -->
+       <app-country-input 
+            (onEnter)="search($event)" 
+            (onDeBouns)="suggestions($event)"
+            placeholder="Search country"
+        ></app-country-input>
+    </div>
+</div>
+
+<hr>
+
+<div *ngIf="error" class="alert alert-danger">
+    No find that element "{{termino}}".
+</div>
+
+<div *ngIf="!error" class="row">
+    <div class="col">
+       <app-country-table [countries]="countries"></app-country-table>
+    </div>
+</div>

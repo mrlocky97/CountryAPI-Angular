@@ -1,0 +1,12 @@
+<div *ngIf="!load; else divCountry" 
+    class="alert alert-info">
+    Wait please...
+</div>
+
+<ng-template #divCountry>
+    <div class="row">
+        <div class="col-12">
+            <h1>country: <small>{{ country.name }}</small></h1>
+        </div>
+    </div>
+</ng-template>
